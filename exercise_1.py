@@ -8,9 +8,9 @@ while True:
 
 current_date = datetime.datetime.today()
 
-def get_days_from_today(date):
+def get_days_from_today():
     output_date = current_date.toordinal() - input_date.toordinal()
     print(f"Между датами прошло {output_date} дня")
     return output_date
 
-get_days_from_today(input_date) 
+get_days_from_today() 
