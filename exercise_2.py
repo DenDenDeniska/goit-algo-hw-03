@@ -26,6 +26,7 @@ def input_function():
             print("Ввелите коректные данные")
             continue
     return (min_number, max_number, quantity_number)
+
 def get_numbers_ticket(min_number, max_number, quantity_number):
     number_list = []
     if min_number >= max_number or max_number - min_number < quantity_number: # Если данные не соответствуют условию задачи то возвращаем пустой список
