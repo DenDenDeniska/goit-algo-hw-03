@@ -25,9 +25,8 @@ while True: # Цикл с обопботкой ошибок что бы ввод
         print("Ввелите коректные данные")
         continue
 
-number_list = []
-
 def get_numbers_ticket(min_number, max_number, quantity_number):
+    number_list = []
     if min_number >= max_number or max_number - min_number < quantity_number: # Если данные не соответствуют условию задачи то возвращаем пустой список
         return number_list
     

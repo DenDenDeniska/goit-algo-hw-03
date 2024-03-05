@@ -1,17 +1,15 @@
 from datetime import datetime, timedelta
 
-today = datetime.today().date()
-
-# Инициализация пустых списков
-next_year_congratulation_list = []
-congratulation_list = []
-
 users = [
     {"name": "John Doe", "birthday": "1985.03.09"},
     {"name": "Jane Smith", "birthday": "1990.03.04"}
 ]
 
 def get_upcoming_birthdays(users):
+    today = datetime.today().date()
+    # Инициализация пустых списков
+    next_year_congratulation_list = []
+    congratulation_list = []
     for user in users: # Выбираем из списка определенного пользователя
         birthday = datetime.strptime(user["birthday"], "%Y.%m.%d").date() # Приводим строку даты рождения к типу datetime
         birthday = birthday.replace(year=today.year) # Заменяем год рождения на текущий год
@@ -28,5 +26,3 @@ def get_upcoming_birthdays(users):
 
 upcoming_birthdays = get_upcoming_birthdays(users)
 print("Список поздравлений на этой неделе:", upcoming_birthdays, end="\n")
-if next_year_congratulation_list:
-    print("Список поздравлений на следующий год", *next_year_congratulation_list, end="\n")

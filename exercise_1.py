@@ -7,9 +7,8 @@ while True: # Цикл с обработкой ошибок, для ввода �
     except ValueError:
         print('Пожалуйста введите правильный формат даты')
 
-current_date = datetime.datetime.today()
-
 def get_days_from_today(input_date_param):
+    current_date = datetime.datetime.today()
     # Использование метода toordinal для вычетания одной даты от другой
     output_date = current_date.toordinal() - input_date_param.toordinal()
     print(f"Между датами прошло {output_date} дня")
