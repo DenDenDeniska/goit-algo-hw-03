@@ -8,6 +8,7 @@ def input_function():
         except ValueError:
             print('Пожалуйста введите правильный формат даты')
     return input_date
+
 def get_days_from_today(input_date_param):
     current_date = datetime.datetime.today()
     # Использование метода toordinal для вычетания одной даты от другой
