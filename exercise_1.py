@@ -1,19 +1,23 @@
 import datetime
 
 def input_function():
-    while True: # Цикл с обработкой ошибок, для ввода коректныъ данных
-        try:
-            input_date = datetime.datetime.fromisoformat(input('Введите дату формата ГГГГ-ММ-ДД: '))
-            break
-        except ValueError:
-            print('Пожалуйста введите правильный формат даты')
+    input_date = input('Введите дату формата ГГГГ-ММ-ДД: ')
     return input_date
-
+    
 def get_days_from_today(input_date_param):
-    current_date = datetime.datetime.today()
+    try:
+        date = datetime.datetime.fromisoformat(input_date_param).date()
+    except Exception as error:
+        print(error)
+        print("Введено неверные данные")
+        return
+
+    current_date = datetime.datetime.today().date()
     # Использование метода toordinal для вычетания одной даты от другой
-    output_date = current_date.toordinal() - input_date_param.toordinal()
+    output_date = current_date.toordinal() - date.toordinal()
     print(f"Между датами прошло {output_date} дня")
     return output_date
 
-get_days_from_today(input_function()) 
+input_date = input_function()
+print(type(input_date))
+get_days_from_today(input_date)
